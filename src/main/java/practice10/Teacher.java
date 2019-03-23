@@ -39,6 +39,13 @@ public class Teacher extends Person{
     }
 
     public boolean isTeaching(Student jerry) {
-        return  classes.contains(jerry.getKlass());
+        boolean result = false;
+        for (Klass klass : classes) {
+            if (klass.isIn(jerry)){
+                result = true;
+                break;
+            }
+        }
+        return  result;
     }
 }
